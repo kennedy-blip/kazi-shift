@@ -1,0 +1,9 @@
+{
+  "name": "KaziShift",
+  "short_name": "KaziShift",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b111c",
+  "theme_color": "#0b111c",
+  "description": "Offline-first shift rota, handover log and overtime ledger."
+}
