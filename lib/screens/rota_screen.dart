@@ -17,7 +17,8 @@ class RotaScreen extends StatelessWidget {
         const SizedBox(height:10),Row(children:[Icon(Icons.person_outline,size:17,color:palette.muted),const SizedBox(width:6),Text(s.member),const Spacer(),Text('${s.start} – ${s.end}',style:TextStyle(color:palette.accent,fontWeight:FontWeight.w700))]),
         const SizedBox(height:5),Text(s.day,style:TextStyle(color:palette.muted)),
         if(s.coverage==Coverage.swapRequested)Text('Swap requested · ${s.swapWith}',style:TextStyle(color:palette.secondary)),
-        if(isAdmin&&s.coverage!=Coverage.covered)Align(alignment:Alignment.centerRight,child:TextButton(onPressed:()=>onUpdate(s),child:const Text('Mark covered')))
+        if(isAdmin&&s.coverage!=Coverage.covered)Align(alignment:Alignment.centerRight,child:TextButton(onPressed:()=>onUpdate(s),child:const Text('Mark covered'))),
+        if(!isAdmin&&s.coverage==Coverage.covered)Align(alignment:Alignment.centerRight,child:TextButton.icon(onPressed:()=>onUpdate(s),icon:const Icon(Icons.swap_horiz),label:const Text('Request swap')))
       ])))),
       if(shifts.isEmpty)const Center(child:Text('No shifts yet. Add your first shift.'))
     ]);
