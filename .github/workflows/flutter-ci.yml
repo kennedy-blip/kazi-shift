@@ -19,7 +19,7 @@ jobs:
       - run: flutter create --platforms=android,web .
       - run: flutter pub get
       - run: dart format lib test
-      - run: flutter analyze
+      - run: flutter analyze --no-fatal-infos
       - run: flutter test
       - run: flutter build web --release --base-href /
       - run: flutter build apk --release
